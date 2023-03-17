@@ -5,7 +5,6 @@ header {
     padding: 30px;
     background-color: rgb(10, 70, 50);
     color: rgb(116, 16, 16);
-    margin: 0 auto;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -34,7 +33,7 @@ ul {
     border-radius: 3px ;
     transition: all;
     transition-duration: 2s;
-    transition-timing-function: cubic-bezier(.17, .67, 1, .29);
+    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
 }
 
 .headerIcon {
@@ -47,7 +46,7 @@ ul {
     margin-right: 20px;
     transition: all;
     transition-duration: 2s;
-    transition-timing-function: cubic-bezier(.17, .67, 1, .29);
+    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
 }
 
 .right{
@@ -76,4 +75,51 @@ ul {
 
 main {
     flex: 1 1;
+}
+
+.firstGrade {
+    position: relative;
+}
+
+.secondGrade {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -700%;
+    left: 0;
+    margin-top: 10px;
+    width: 200px;
+    background-color: rgb(10, 70, 50);
+    text-align: center;
+    transition: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
+}
+
+.secondGradeList {
+    padding: 15px;
+}
+
+.secondGradeLinks {
+    text-decoration: none;
+    color: red;
+}
+
+.secondGradeLinks:hover {
+    color: yellow;
+}
+
+.secondGradeLinks {
+    transition: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
+}
+
+.options {
+    position: relative;
+}
+
+.options:hover .secondGrade {
+        top: 140%;
+        left: 0;
 }
