@@ -5,6 +5,9 @@ header {
     padding: 30px;
     background-color: rgb(10, 70, 50);
     color: rgb(116, 16, 16);
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .container {
@@ -29,6 +32,9 @@ ul {
     text-align: center;
     padding: 10px;
     border-radius: 3px ;
+    transition: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.17, .67, 1, .29);
 }
 
 .headerIcon {
@@ -39,6 +45,9 @@ ul {
     top: 0;
     left: 0;
     margin-right: 20px;
+    transition: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(.17, .67, 1, .29);
 }
 
 .right{
@@ -49,4 +58,22 @@ ul {
     top: 0;
     left: 0;
     margin-left: 20px;
+}
+
+.firstGradeLinks:hover{
+    color: yellow;
+    fill: yellow;
+}
+
+.firstGradeLinks:hover .headerIcon {
+    fill: yellow;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 1;
 }
