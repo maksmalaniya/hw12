@@ -24,29 +24,19 @@ ul {
     color: red;
     text-decoration: none;
     display: block;
-    /*position: relative;*/
     border: 2px solid black;
     display: flex;
-    flex-direction: row;
-    text-align: center;
     padding: 10px;
     border-radius: 3px ;
-    transition: all;
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
+    transition: color 2s cubic-bezier(.71, 1.73, 1, -0.8);
 }
 
 .headerIcon {
     width: 18px;
     height: 18px;
     fill: aliceblue;
-    position: relative;
-    top: 0;
-    left: 0;
     margin-right: 20px;
-    transition: all;
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
+    transition: fill 2s cubic-bezier(.71, 1.73, 1, -0.8);
 }
 
 .right{
@@ -59,22 +49,21 @@ ul {
     margin-left: 20px;
 }
 
-.firstGradeLinks:hover{
+.firstGradeLinks:hover,
+.firstGradeLinks:hover .headerIcon,
+.secondGradeLinks:hover{
     color: yellow;
-    fill: yellow;
-}
-
-.firstGradeLinks:hover .headerIcon {
     fill: yellow;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
-    flex: 1 1;
+    flex: 1;
 }
 
 .firstGrade {
@@ -88,37 +77,27 @@ main {
     top: -700%;
     left: 0;
     margin-top: 10px;
-    width: 200px;
+    width: 100%;
     background-color: rgb(10, 70, 50);
     text-align: center;
-    transition: all;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
-    z-index: 1;
+    transition: all 1s cubic-bezier(.71, 1.73, 1, -0.8);
 }
 
-.secondGradeList {
+.secondGradeList, .thirdGradeList {
     padding: 15px;
 }
 
-.secondGradeLinks {
+.secondGradeLinks, .thirdGradeLinks {
     text-decoration: none;
     color: red;
 }
 
-.secondGradeLinks:hover {
-    color: yellow;
-}
-
 .secondGradeLinks {
-    transition: all;
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(.71, 1.73, 1, -0.8);
+    transition: all 2s cubic-bezier(.71, 1.73, 1, -0.8);
 }
 
 .options {
     position: relative;
-    z-index: 5;
 }
 
 .options:hover .secondGrade {
@@ -128,34 +107,29 @@ main {
 
 .layouts {
     position: relative;
-    /*z-index: 1;*/
 }
 
 .thirdGrade {
     position: absolute;
     top: 0;
-    width: 200px;
+    width: 100%;
     text-align: center;
     right: 750%;
     background-color: rgb(10, 70, 50);
     opacity: 0;
-    /*z-index: -1;*/
-    transition: all;
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(.67, .64, 1, .3);
-}
-
-.thirdGradeList {
-    padding: 15px;
-}
-
-.thirdGradeLinks {
-    color: red;
-    text-decoration: none;
+    transition: all 2s cubic-bezier(.67, .64, 1, .3);
 }
 
 .layouts:hover .thirdGrade{
     top: 0;
     right: 100%;
     opacity: 1;
+}
+
+.footer {
+    padding: 15px;
+    background-color: rgb(10, 70, 50);
+    text-align: center;
+    color: red;
+    font-size: 18px;
 }
