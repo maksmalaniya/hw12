@@ -141,7 +141,16 @@ main {
 /*__________________________________TRANSFORM________________________________________*/
 
 .block {
-    width: 200px;
+    display: flex;
+    flex-flow: wrap;
+    padding: 50px 0;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 100px;
+    margin: 0 auto;
+    justify-content: center;
+    transform: rotate(45deg)
+    /*width: 200px;
     height: 200px;
     background-color: brown;
     position: absolute;
@@ -163,52 +172,58 @@ main {
     translateY (0) сдвигает элемент по оси Y
     */
 
-   transform:rotate(45deg)
+   /*transform:rotate(45deg)*/
 }
 
 .iconBlock {
-    width: 80px;
-    height: 80px;
-    margin: 10px;
     border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
 
 .rotateIcon {
-    transform: rotate(315deg);
+    /*transform: rotate(315deg);*/
+    display: block;
+    padding: 4px;
+    font-size: 0;
+}
+
+.rotateIcon:hover .footerIcon {
+    fill: aquamarine;
+    transform: rotate(-45deg) scale(1.2);
 }
 
 .footerIcon {
     width: 28px;
     height: 28px;
+    transform: rotate(-45deg);
     fill: aliceblue;
     transition: all 1s cubic-bezier(.25, 2, 1, -0.78);
 }
 
-.footerIcon:hover {
+/*.footerIcon:hover {
     width: 38px;
     height: 38px;
     fill: aquamarine;
-}
+}*/
 
 .hoverMeText {
     color: red;
     background-color: rgb(119, 20, 128);
     width: 200px;
     text-align: center;
-    margin: 7px 0 7px 0;
+    padding: 7px 0;
 }
 
 .hoverMe {
-    position: absolute;
-    top: 770px;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
     width: 200px;
-    height: 100%;
-    left: 100%;
-    z-index: 0;
-    transition: top 1s cubic-bezier(.67, .64, 1, .3);
+    background-color: lightskyblue;
+    animation: moving 200ms linear infinite;
+    transition: transform 1s cubic-bezier(.67, .64, 1, .3);
+    transform: translateY(calc(100% - 30px));
+    z-index: 5;
 }
 
 .hoverMeText a {
@@ -218,16 +233,113 @@ main {
     padding: 15px;
 }
 
-.hoverMe {
-    position: relative;
-}
-
-.hoverMe:hover {
-    top: 440px;
-    height: 600px;
+/*.hoverMe:hover {
+    transform: translateY(0);
+    animation: none;
 }
 
 .hoverMe:hover .block {
     transform: translateX(1) rotate(45deg);
+}*/
+
+@keyframes moving {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
+
+
+/*.item {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+@keyframes myItem {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(600px);
+    }
+}*/
+
+/*.pulse {
+    font-size: 30px;
+    padding: 15px;
+    background: #000;
+    color: aliceblue;
+    margin: 0 auto;
+}
+
+.pulsation {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-repeat: 50%;
+    border-radius: 50%;
+    position: relative;
+    top: -2px;
+    left: 15px;
+}
+
+.online::before,
+.online::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px green;
+    animation: pulse 1s ease-out infinite;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+}
+
+.offline::before,
+.offline::after {
+    content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 10px red;
+        animation: pulse 1s ease-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}*/
